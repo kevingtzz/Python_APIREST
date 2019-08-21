@@ -57,14 +57,14 @@ def post_medition():
     date = datetime.strftime(datetime.now(), '%y-%m-%d %H:%M:%S')
     medition = { "date": date, **medition_type, "value": body['value'] }
     meditions.append(medition)
-    return jsonify(medition)
+    return "Medition added successfuly"
 
 #------------------------------------------- DELETE ROUTES ---------------------------------
 
 @app.route('/deleteAll', methods = ['DELETE'])
 def deleteAll():
     meditions = []
-    return jsonify(meditions)
+    return "All meditions deleted"
 
 if __name__ == '__main__':
     app.run(port = 3000, debug = True)
